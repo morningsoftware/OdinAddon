@@ -67,7 +67,6 @@ public abstract class ItemInHandRendererMixin {
         instance.mulPose(Axis.ZP.rotationDegrees(Animations.getRoll()));
     }
 
-
     @Inject(method = "swingArm", at = @At("HEAD"), cancellable = true)
     private void handleCustomSwingAnimation(float swingProgress, float equipProgress, PoseStack poseStack, int swingTicks, HumanoidArm arm, CallbackInfo ci) {
         if (!Animations.getShouldStopSwing()) return;

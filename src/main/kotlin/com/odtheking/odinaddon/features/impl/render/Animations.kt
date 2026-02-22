@@ -18,6 +18,7 @@ object Animations : Module(
     @JvmStatic val roll by NumberSetting("Roll", 0f, -180, 180, 1, desc = "Rotates your held item. Default: 0")
     @JvmStatic val ignoreHaste by BooleanSetting("Ignore Effects", false, desc = "Makes the chosen speed override haste modifiers.")
     @JvmStatic val speed by NumberSetting("Speed", 6, 0, 32, 1, desc = "Speed of the swing animation.").withDependency { ignoreHaste }
+    @JvmStatic val disableReSwing by BooleanSetting("Disable Re-Swing", true, desc = "Prevents the swing animation from playing again if you try to swing while already swinging.")
 
     val noEquipReset by BooleanSetting("No Equip Reset", false, desc = "Disables the equipping animation when switching items.")
     val noSwing by BooleanSetting("No Swing", false, desc = "Prevents your item from visually swinging forward.")
@@ -27,6 +28,9 @@ object Animations : Module(
 
     @JvmStatic
     val shouldStopSwing get() = enabled && noSwing
+
+    @JvmStatic
+    val shouldNotSwing get() = enabled && disableReSwing
 
     @JvmStatic
     val isActive get() = enabled

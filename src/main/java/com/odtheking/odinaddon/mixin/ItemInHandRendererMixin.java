@@ -37,9 +37,6 @@ public abstract class ItemInHandRendererMixin {
     private float oOffHandHeight;
 
     @Shadow
-    protected abstract void applyItemArmTransform(PoseStack poseStack, HumanoidArm arm, float partialTicks);
-
-    @Shadow
     protected abstract void applyItemArmAttackTransform(PoseStack poseStack, HumanoidArm arm, float swingProgress);
 
     @WrapOperation(
@@ -55,7 +52,6 @@ public abstract class ItemInHandRendererMixin {
 
         if (!Animations.isActive() || itemStack.isEmpty() || itemStack.has(DataComponents.MAP_ID)) return;
 
-
         float xOffset = Animations.getX();
         float yOffset = Animations.getY();
         float zOffset = Animations.getZ();
@@ -68,12 +64,11 @@ public abstract class ItemInHandRendererMixin {
     }
 
     @Inject(method = "swingArm", at = @At("HEAD"), cancellable = true)
-    private void handleCustomSwingAnimation(float swingProgress, float equipProgress, PoseStack poseStack, int swingTicks, HumanoidArm arm, CallbackInfo ci) {
+    private void handleCustomSwingAnimation(float f, PoseStack poseStack, int i, HumanoidArm humanoidArm, CallbackInfo ci) {
         if (!Animations.getShouldStopSwing()) return;
         ci.cancel();
 
-        this.applyItemArmTransform(poseStack, arm, equipProgress);
-        this.applyItemArmAttackTransform(poseStack, arm, swingProgress);
+        this.applyItemArmAttackTransform(poseStack, humanoidArm, f);
     }
 
     @Inject(
@@ -101,7 +96,7 @@ public abstract class ItemInHandRendererMixin {
             method = "tick",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/player/LocalPlayer;getAttackStrengthScale(F)F"
+                    target = "Lnet/minecraft/client/player/LocalPlayer;getItemSwapScale(F)F"
             )
     )
     private float overrideAttackStrengthScale(float originalValue) {

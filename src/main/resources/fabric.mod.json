@@ -1,19 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "odinaddon",
+  "id": "quickwarp",
   "version": "${version}",
-  "name": "OdinAddon",
+  "name": "QuickWarp",
   "description": "",
   "authors": [],
   "contact": {},
   "license": "BSD-3-Clause",
-  "icon": "assets/odinaddon/icon.png",
+  "icon": "assets/quickwarp/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
       {
         "adapter": "kotlin",
-        "value": "com.odtheking.odinaddon.OdinAddon"
+        "value": "com.odtheking.odinaddon.QuickWarpAddon"
       }
     ]
   },

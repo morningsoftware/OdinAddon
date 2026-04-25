@@ -1,4 +1,4 @@
-package com.odtheking.odinaddon.features.impl.skyblock
+package codes.morning.quickwarp.features.impl.skyblock
 
 import com.mojang.blaze3d.platform.InputConstants
 import com.odtheking.odin.clickgui.settings.Setting.Companion.withDependency
@@ -20,8 +20,8 @@ import com.odtheking.odin.utils.Colors
 import com.odtheking.odin.utils.getBlockBounds
 import com.odtheking.odin.utils.isEtherwarpItem
 import com.odtheking.odin.utils.render.drawStyledBox
-import com.odtheking.odinaddon.utils.randInt
-import com.odtheking.odinaddon.utils.skyblock.LocationUtils
+import codes.morning.quickwarp.utils.randInt
+import codes.morning.quickwarp.utils.skyblock.LocationUtils
 import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket
 import net.minecraft.network.protocol.game.ServerboundSwingPacket
 import net.minecraft.network.protocol.game.ServerboundUseItemPacket

@@ -1,4 +1,4 @@
-package com.odtheking.odinaddon.utils
+package codes.morning.quickwarp.utils
 
 /**
  * Function that returns a random value between

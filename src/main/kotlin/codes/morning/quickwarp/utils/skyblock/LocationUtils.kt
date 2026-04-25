@@ -1,4 +1,4 @@
-package com.odtheking.odinaddon.utils.skyblock
+package codes.morning.quickwarp.utils.skyblock
 
 object LocationUtils {
 

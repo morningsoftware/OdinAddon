@@ -1,6 +1,6 @@
-package com.odtheking.odinaddon.mixin;
+package codes.morning.quickwarp.mixin;
 
-import com.odtheking.odinaddon.features.impl.skyblock.QuickWarp;
+import codes.morning.quickwarp.features.impl.skyblock.QuickWarp;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.InteractionHand;
 import org.spongepowered.asm.mixin.Mixin;

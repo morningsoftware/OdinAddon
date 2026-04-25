@@ -1,10 +1,10 @@
-package com.odtheking.odinaddon.commands
+package codes.morning.quickwarp.commands
 
 import com.github.stivais.commodore.Commodore
 import com.github.stivais.commodore.utils.GreedyString
 import com.odtheking.odin.utils.devMessage
 import com.odtheking.odin.utils.modMessage
-import com.odtheking.odinaddon.utils.skyblock.LocationUtils
+import codes.morning.quickwarp.utils.skyblock.LocationUtils
 
 // Commands are handled via https://github.com/Stivais/Commodore
 val qwCommand = Commodore("qw", "quickwarp") {
